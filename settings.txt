@@ -1,22 +1,13 @@
-You will need to fill out this file for hand in. 
-
-The bellow is just an example, feel free to disregard this documents contents.
-
-
-Your final settings.txt will look something like this when you are finished:
-
-/////////////////////////////////
-
 Wallpaper 1:
 
-//your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+let topBlade = 30; //top of the blade for sword 1
+let topBladeB = 30; //top of the blade for sword 2
+let pomelSize = 15; //size of the pomel on the bottom of the swords
+let bottomBlade = 130; //bottom of the blade for sword 1
+let bottomBladeB = 130; //bottom of the blade for sword 2
+let lineW = 0; //line width
+let rust = 0; //Controls the rust of the blade for sword 1 which changes colour and adds defects
+let rust2 = 0; //controls rust for sword 2
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -24,23 +15,23 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 150;
 }
 
 /////////////////////////////////
 
 Wallpaper 2:
 
-//your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+let topBlade = 80; //top of the blade for sword 1
+let topBladeB = 30; //top of the blade for sword 2
+let pomelSize = 20; //size of the pomel on the bottom of the swords
+let bottomBlade = 130; //bottom of the blade for sword 1
+let bottomBladeB = 130; //bottom of the blade for sword 2
+let lineW = 0; //line width
+let rust = 2; //Controls the rust of the blade for sword 1 which changes colour and adds defects
+let rust2 = 0; //controls rust for sword 2
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -48,7 +39,178 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 150;
 }
+
+/////////////////////////////////
+
+Wallpaper 3:
+
+let topBlade = 50; //top of the blade for sword 1
+let topBladeB = 30; //top of the blade for sword 2
+let pomelSize = 15; //size of the pomel on the bottom of the swords
+let bottomBlade = 130; //bottom of the blade for sword 1
+let bottomBladeB = 100; //bottom of the blade for sword 2
+let lineW = 0; //line width
+let rust = 0; //Controls the rust of the blade for sword 1 which changes colour and adds defects
+let rust2 = 1; //controls rust for sword 2
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 150;
+}
+
+/////////////////////////////////
+
+Wallpaper 4:
+
+let topBlade = 50; //top of the blade for sword 1
+let topBladeB = 30; //top of the blade for sword 2
+let pomelSize = 15; //size of the pomel on the bottom of the swords
+let bottomBlade = 130; //bottom of the blade for sword 1
+let bottomBladeB = 80; //bottom of the blade for sword 2
+let lineW = 0; //line width
+let rust = 2; //Controls the rust of the blade for sword 1 which changes colour and adds defects
+let rust2 = 1; //controls rust for sword 2
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 150;
+}
+
+/////////////////////////////////
+
+Wallpaper 5:
+
+let topBlade = 50; //top of the blade for sword 1
+let topBladeB = 30; //top of the blade for sword 2
+let pomelSize = 12; //size of the pomel on the bottom of the swords
+let bottomBlade = 130; //bottom of the blade for sword 1
+let bottomBladeB = 120; //bottom of the blade for sword 2
+let lineW = 1; //line width
+let rust = 3; //Controls the rust of the blade for sword 1 which changes colour and adds defects
+let rust2 = 3; //controls rust for sword 2
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 150;
+}
+
+/////////////////////////////////
+
+Wallpaper 6:
+
+let topBlade = 50; //top of the blade for sword 1
+let topBladeB = 30; //top of the blade for sword 2
+let pomelSize = 12; //size of the pomel on the bottom of the swords
+let bottomBlade = 130; //bottom of the blade for sword 1
+let bottomBladeB = 120; //bottom of the blade for sword 2
+let lineW = 0; //line width
+let rust = 0; //Controls the rust of the blade for sword 1 which changes colour and adds defects
+let rust2 = 3; //controls rust for sword 2
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 150;
+}
+
+/////////////////////////////////
+
+Wallpaper 7:
+
+let topBlade = 30; //top of the blade for sword 1
+let topBladeB = 30; //top of the blade for sword 2
+let pomelSize = 12; //size of the pomel on the bottom of the swords
+let bottomBlade = 80; //bottom of the blade for sword 1
+let bottomBladeB = 120; //bottom of the blade for sword 2
+let lineW = 1; //line width
+let rust = 0; //Controls the rust of the blade for sword 1 which changes colour and adds defects
+let rust2 = 2; //controls rust for sword 2
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 150;
+}
+
+/////////////////////////////////
+
+Wallpaper 8:
+
+let topBlade = 30; //top of the blade for sword 1
+let topBladeB = 30; //top of the blade for sword 2
+let pomelSize = 12; //size of the pomel on the bottom of the swords
+let bottomBlade = 80; //bottom of the blade for sword 1
+let bottomBladeB = 120; //bottom of the blade for sword 2
+let lineW = 0; //line width
+let rust = 0; //Controls the rust of the blade for sword 1 which changes colour and adds defects
+let rust2 = 3; //controls rust for sword 2
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 150;
+}
+
+/////////////////////////////////
+
+Wallpaper 9:
+
+let topBlade = 50; //top of the blade for sword 1
+let topBladeB = 30; //top of the blade for sword 2
+let pomelSize = 10; //size of the pomel on the bottom of the swords
+let bottomBlade = 130; //bottom of the blade for sword 1
+let bottomBladeB = 130; //bottom of the blade for sword 2
+let lineW = 1; //line width
+let rust = 0; //Controls the rust of the blade for sword 1 which changes colour and adds defects
+let rust2 = 3; //controls rust for sword 2
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 150;
+}
+
+
+push
