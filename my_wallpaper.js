@@ -1,13 +1,13 @@
 //your parameter variables go here!
-let topBlade = 40; //for sword 1
-let topBladeB = 30; //for sword 2
-let pomelSize = 15;
-let bottomBlade = 130;
-let bottomBladeB = 130;
-let x = 50;
-let squSize = 50;
-let lineW = 0;
-let rust = 0;
+let topBlade = 40; //top of the blade for sword 1
+let topBladeB = 30; //top of the blade for sword 2
+let pomelSize = 15; //size of the pomel on the bottom of the swords
+let bottomBlade = 130; //bottom of the blade for sword 1
+let bottomBladeB = 130; //bottom of the blade for sword 2
+let x = 50; //x value used for the square grid background
+let squSize = 50; //square size for the repeating square grid background
+let lineW = 0; //line width
+let rust = 0; //Controls the rust of the blade for sword 1 which changes colour and adds defects
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -30,14 +30,13 @@ strokeWeight(0);
 
 //for loop for background
 for (let col=1; col<=6; col++){
-  //if col is even make green
-  //else make grey
   if(col%2){
-    fill(15, 117, 64);
+    fill(15, 117, 64); //if col is even make green
   }
   else{
-    fill(157, 174, 191);
+    fill(157, 174, 191); //else make grey
   }
+
   //draws alternating pattern
   rect(x*col,0,squSize, squSize);
   //draws grey line
@@ -51,9 +50,11 @@ for (let col=1; col<=6; col++){
   rect(x*col, 150, squSize,squSize);
 }
 
+  //stroke weight and colour
   strokeWeight(lineW);
   stroke(0,0,0);
 
+  //sword 1
   //blade
   //colour based on rust level
   if (rust == 0){
@@ -67,24 +68,24 @@ for (let col=1; col<=6; col++){
   }
 
   //if the blade is longer than 50 its normal
-  //else it pierces the canvas
   if (bottomBlade - topBlade > 50){
-  beginShape();
-  vertex(55, bottomBlade);
   
+  //left side of blade
+    beginShape();
+  vertex(55, bottomBlade);
   //if the blade is to rusty give it a notch
   if (rust > 1){
     vertex(55, topBlade + 10);
     vertex(60, topBlade + 6);
     vertex(55, topBlade + 2);
   }
-
   vertex(55, topBlade);
   vertex(75, point);
   vertex(75,bottomBlade);
   endShape(CLOSE);
 
-  //colour based on rust level
+
+  //colour based on rust level for right side of blade
   if (rust == 0){
     fill(94,94,94);
   }
@@ -95,27 +96,42 @@ for (let col=1; col<=6; col++){
     fill(112, 50, 3);
   }
 
+  //right side of blade
   beginShape();
   vertex(75, point);
   vertex(95, topBlade);
   vertex(95, bottomBlade);
   vertex(75,bottomBlade);
   endShape(CLOSE);
+
   }
+  //else if its less than 50 and less than 2 rust level it pierces the canvas
   else if (bottomBlade - topBlade <= 50 && rust < 2){
+
+    //left side of blade
     rect(55,topBlade, 40, bottomBlade-topBlade);
+
+    //colour based on rust right side
     if (rust == 0){
       fill(94,94,94);
     }
     else {
       fill(99, 60, 31);
     }
+
+    //right side of blade
     rect(75,topBlade, 20, bottomBlade-topBlade);
+
+    //slice in canvas 
     strokeWeight(1);
     line(50,topBlade, 100,topBlade);
     strokeWeight(lineW);
   }
+
+  //else if its less than 50 and 2 or greater rust level the blade is shattered
   else if (bottomBlade - topBlade <= 50 && rust >= 2) {
+    
+    //left side of blade
     beginShape();
     vertex (55, bottomBlade);
     vertex (55, topBlade+5);
@@ -127,6 +143,7 @@ for (let col=1; col<=6; col++){
     vertex (75, bottomBlade);
     endShape(CLOSE);
 
+    //colour based on rust for right side
     if (rust >=1 && rust <3 ){
       fill(99, 60, 31);
     }
@@ -134,6 +151,7 @@ for (let col=1; col<=6; col++){
       fill(112, 50, 3);
     }
 
+    //right side of blade
     beginShape();
     vertex(75, topBlade+2);
     vertex(80, topBlade+2);
@@ -146,7 +164,7 @@ for (let col=1; col<=6; col++){
   }
   
   //crossguard
-  fill(252, 187, 88);
+  fill(252, 187, 88); //golden colour
   beginShape();
   vertex(35,bottomBlade);
   vertex(53,bottomBlade+20);
@@ -155,6 +173,7 @@ for (let col=1; col<=6; col++){
   endShape(CLOSE);
   rect (53, bottomBlade-5, 44, 5);
   fill(110, 88, 29);
+  //shadows
   triangle(70, bottomBlade-5, 97, bottomBlade-5, 97, bottomBlade);
   triangle(53, bottomBlade, 97, bottomBlade+20, 115, bottomBlade);
 
@@ -175,9 +194,12 @@ for (let col=1; col<=6; col++){
 
 
   //Sword 2
-  fill (59, 57, 53);
+  fill (59, 57, 53); //dark grey colour for blade
   //blade
+  //if blade is greater than 50 make it normal
   if (bottomBladeB - topBladeB > 50){
+    
+    //left side of blade
     beginShape();
     vertex(205, bottomBladeB);
     //add notch on left side if blade
@@ -189,7 +211,8 @@ for (let col=1; col<=6; col++){
     vertex(225,bottomBladeB);
     endShape(CLOSE);
   
-    fill(38, 37, 33);
+    //right side of blade
+    fill(38, 37, 33); //slightly darker for shadow
     beginShape();
     vertex(225, point);
     vertex(245, topBladeB);
@@ -201,17 +224,23 @@ for (let col=1; col<=6; col++){
     vertex(225,bottomBladeB);
     endShape(CLOSE);
     }
+
+    //else have it pierce the canvas
     else{
+      //left side of blade
       rect(205,topBladeB, 40, bottomBladeB-topBladeB);
-      fill(38, 37, 33);
+      fill(38, 37, 33);//slightly darker for shadow
+      //right side of blade
       rect(225,topBladeB, 20, bottomBladeB-topBladeB);
+
+      //slice in canvas
       strokeWeight(1);
       line(195,topBladeB, 255,topBladeB);
       strokeWeight(lineW);
     }
   
     //crossguard
-    fill(173, 0, 0);
+    fill(173, 0, 0); //red
     beginShape();
     vertex(185,bottomBladeB);
     vertex(203,bottomBladeB+20);
@@ -220,6 +249,7 @@ for (let col=1; col<=6; col++){
     endShape(CLOSE);
     rect (203, bottomBladeB-5, 44, 5);
     fill(94, 0, 0);
+    //shadows
     triangle(220, bottomBladeB-5, 247, bottomBladeB-5, 247, bottomBladeB);
     triangle(203, bottomBladeB, 247, bottomBladeB+20, 265, bottomBladeB);
   
@@ -239,6 +269,7 @@ for (let col=1; col<=6; col++){
 
 
     //shine
+    //only shiney if no rust
     if (rust < 1){
   fill(256,256,256);
   beginShape();
