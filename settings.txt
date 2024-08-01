@@ -1,22 +1,15 @@
-You will need to fill out this file for hand in. 
-
-The bellow is just an example, feel free to disregard this documents contents.
-
-
-Your final settings.txt will look something like this when you are finished:
-
-/////////////////////////////////
-
 Wallpaper 1:
 
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+let topBlade = 30; //for sword 1
+let topBladeB = 40; //for sword 2
+let pomelSize = 12;
+let bottomBlade = 115;
+let bottomBladeB = 115;
+let x = 50;
+let squSize = 50;
+let lineW = 0;
+let rust = 0;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -24,23 +17,24 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
 }
 
 /////////////////////////////////
 
 Wallpaper 2:
 
-//your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+let topBlade = 30; //for sword 1
+let topBladeB = 40; //for sword 2
+let pomelSize = 18;
+let bottomBlade = 95;
+let bottomBladeB = 115;
+let x = 50;
+let squSize = 50;
+let lineW = 0;
+let rust = 2;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -48,7 +42,205 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+/////////////////////////////////
+
+Wallpaper 3:
+
+let topBlade = 50; //for sword 1
+let topBladeB = 70; //for sword 2
+let pomelSize = 15;
+let bottomBlade = 115;
+let bottomBladeB = 115;
+let x = 50;
+let squSize = 50;
+let lineW = 0;
+let rust = 0;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+/////////////////////////////////
+
+Wallpaper 4:
+
+let topBlade = 50; //for sword 1
+let topBladeB = 30; //for sword 2
+let pomelSize = 15;
+let bottomBlade = 115;
+let bottomBladeB = 130;
+let x = 50;
+let squSize = 50;
+let lineW = 0;
+let rust = 1;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+/////////////////////////////////
+
+Wallpaper 5:
+
+let topBlade = 70; //for sword 1
+let topBladeB = 30; //for sword 2
+let pomelSize = 15;
+let bottomBlade = 115;
+let bottomBladeB = 130;
+let x = 50;
+let squSize = 50;
+let lineW = 1;
+let rust = 3;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+/////////////////////////////////
+
+Wallpaper 6:
+
+let topBlade = 30; //for sword 1
+let topBladeB = 30; //for sword 2
+let pomelSize = 15;
+let bottomBlade = 130;
+let bottomBladeB = 100;
+let x = 50;
+let squSize = 50;
+let lineW = 1;
+let rust = 0;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+/////////////////////////////////
+
+Wallpaper 7:
+
+let topBlade = 40; //for sword 1
+let topBladeB = 30; //for sword 2
+let pomelSize = 15;
+let bottomBlade = 130;
+let bottomBladeB = 130;
+let x = 50;
+let squSize = 50;
+let lineW = 0;
+let rust = 0;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+/////////////////////////////////
+
+Wallpaper 8:
+
+let topBlade = 30; //for sword 1
+let topBladeB = 100; //for sword 2
+let pomelSize = 15;
+let bottomBlade = 100;
+let bottomBladeB = 130;
+let x = 50;
+let squSize = 50;
+let lineW = 1;
+let rust = 0;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+/////////////////////////////////
+
+Wallpaper 9:
+
+let topBlade = 60; //for sword 1
+let topBladeB = 30; //for sword 2
+let pomelSize = 15;
+let bottomBlade = 90;
+let bottomBladeB = 130;
+let x = 50;
+let squSize = 50;
+let lineW = 0;
+let rust = 2;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+Final Wallpaper
+
+let topBlade = 40; //for sword 1
+let topBladeB = 30; //for sword 2
+let pomelSize = 15;
+let bottomBlade = 130;
+let bottomBladeB = 130;
+let x = 50;
+let squSize = 50;
+let lineW = 0;
+let rust = 0;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 300;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
 }

@@ -1,13 +1,12 @@
 //your parameter variables go here!
-let topBlade = 40; //top of the blade for sword 1
+let topBlade = 50; //top of the blade for sword 1
 let topBladeB = 30; //top of the blade for sword 2
-let pomelSize = 15; //size of the pomel on the bottom of the swords
+let pomelSize = 12; //size of the pomel on the bottom of the swords
 let bottomBlade = 130; //bottom of the blade for sword 1
-let bottomBladeB = 130; //bottom of the blade for sword 2
-let x = 50; //x value used for the square grid background
-let squSize = 50; //square size for the repeating square grid background
+let bottomBladeB = 120; //bottom of the blade for sword 2
 let lineW = 0; //line width
 let rust = 0; //Controls the rust of the blade for sword 1 which changes colour and adds defects
+let rust2 = 3; //controls rust for sword 2
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -17,7 +16,7 @@ function setup_wallpaper(pWallpaper) {
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 300;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 100;
+  pWallpaper.grid_settings.row_offset  = 150;
 }
 
 function wallpaper_background() {
@@ -27,28 +26,30 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 let point = 10; //more than topblade
 strokeWeight(0);
-
-//for loop for background
-for (let col=1; col<=6; col++){
-  if(col%2){
-    fill(15, 117, 64); //if col is even make green
-  }
-  else{
-    fill(157, 174, 191); //else make grey
-  }
-
-  //draws alternating pattern
-  rect(x*col,0,squSize, squSize);
-  //draws grey line
-  fill(157, 174, 191);
-  rect(x*col, 50, squSize,squSize);
-  //draws green line
-  fill(15, 117, 64);
-  rect(x*col, 100, squSize,squSize);
-  //draws grey line
-  fill(157, 174, 191);
-  rect(x*col, 150, squSize,squSize);
-}
+fill(33, 156, 151);
+//lil vine thing
+beginShape();
+curveVertex(50,200);
+curveVertex(50,200);
+curveVertex(75,180);
+curveVertex(80,140);
+curveVertex(100,120);
+curveVertex(120,120);
+curveVertex(140,100);
+curveVertex(180,20);
+curveVertex(200,0);
+curveVertex(200,0);
+curveVertex(210,0);
+curveVertex(210,0);
+curveVertex(200,15);
+curveVertex(150,110);
+curveVertex(130,130);
+curveVertex(110,130);
+curveVertex(90,150);
+curveVertex(85,190);
+curveVertex(60,200);
+curveVertex(60,200);
+endShape();
 
   //stroke weight and colour
   strokeWeight(lineW);
@@ -194,7 +195,16 @@ for (let col=1; col<=6; col++){
 
 
   //Sword 2
-  fill (59, 57, 53); //dark grey colour for blade
+  //rust colour variations for sword 2
+  if (rust2 == 0){
+    fill(120, 114, 237);
+  }
+  else if (rust2 >=1 && rust2 <3){
+    fill(158, 172, 240);
+  }
+  else{
+    fill(199, 233, 242);
+  }
   //blade
   //if blade is greater than 50 make it normal
   if (bottomBladeB - topBladeB > 50){
@@ -212,7 +222,16 @@ for (let col=1; col<=6; col++){
     endShape(CLOSE);
   
     //right side of blade
-    fill(38, 37, 33); //slightly darker for shadow
+    //rust colour varitations
+    if (rust2 == 0){
+      fill(36, 30, 150);
+    }
+    else if (rust2 >=1 && rust2 <3){
+      fill(65, 91, 176);
+    }
+    else{
+      fill(121, 135, 181);
+    }
     beginShape();
     vertex(225, point);
     vertex(245, topBladeB);
@@ -225,22 +244,46 @@ for (let col=1; col<=6; col++){
     endShape(CLOSE);
     }
 
-    //else have it pierce the canvas
-    else{
-      //left side of blade
-      rect(205,topBladeB, 40, bottomBladeB-topBladeB);
-      fill(38, 37, 33);//slightly darker for shadow
-      //right side of blade
-      rect(225,topBladeB, 20, bottomBladeB-topBladeB);
+    //else the blade is shattered
+  else{
+    
+    //left side of blade
+    beginShape();
+    vertex (205, bottomBladeB);
+    vertex (205, topBladeB+5);
+    vertex (210, topBladeB);
+    vertex (212, topBladeB+3);
+    vertex (217, topBladeB);
+    vertex (221, topBladeB+5);
+    vertex (225, topBladeB+2);
+    vertex (225, bottomBladeB);
+    endShape(CLOSE);
 
-      //slice in canvas
-      strokeWeight(1);
-      line(195,topBladeB, 255,topBladeB);
-      strokeWeight(lineW);
+    //colour based on rust for right side
+    if (rust2 == 0){
+      fill(36, 30, 150);
     }
+    else if (rust2 >=1 && rust2 <3){
+      fill(65, 91, 176);
+    }
+    else{
+      fill(121, 135, 181);
+    }
+
+    //right side of blade
+    beginShape();
+    vertex(225, topBladeB+2);
+    vertex(230, topBladeB+2);
+    vertex(236, topBladeB);
+    vertex(240, topBladeB+3);
+    vertex(245, topBladeB);
+    vertex(245, bottomBladeB);
+    vertex(225, bottomBladeB);
+    endShape(CLOSE);
+  }
   
     //crossguard
-    fill(173, 0, 0); //red
+    fill(217, 65, 133); //pinky red
     beginShape();
     vertex(185,bottomBladeB);
     vertex(203,bottomBladeB+20);
@@ -248,7 +291,7 @@ for (let col=1; col<=6; col++){
     vertex(265,bottomBladeB);
     endShape(CLOSE);
     rect (203, bottomBladeB-5, 44, 5);
-    fill(94, 0, 0);
+    fill(153, 2, 69);
     //shadows
     triangle(220, bottomBladeB-5, 247, bottomBladeB-5, 247, bottomBladeB);
     triangle(203, bottomBladeB, 247, bottomBladeB+20, 265, bottomBladeB);
@@ -264,7 +307,7 @@ for (let col=1; col<=6; col++){
     endShape(CLOSE);
   
     //pomel
-    fill(173, 0, 0);
+    fill(217, 65, 133);
     ellipse(225, bottomBladeB+60, pomelSize, pomelSize);
 
 
