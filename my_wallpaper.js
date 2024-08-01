@@ -1,13 +1,17 @@
 //your parameter variables go here!
 let topBlade = 30; //for sword 1
-let topBladeB = 30; //for sword 2
+let topBladeB = 40; //for sword 2
 let pomelSize = 12;
 let bottomBlade = 115;
 let bottomBladeB = 115;
+let x = 50;
+let squSize = 50;
+let lineW = 0;
+let rust = 0;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -17,28 +21,80 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(109, 173, 247); //light honeydew green colour
+  background(109, 173, 247); //Sky blue
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 let point = 10; //more than topblade
+strokeWeight(0);
 
+//for loop for background
+for (let col=1; col<=6; col++){
+  //if col is even make green
+  //else make grey
+  if(col%2){
+    fill(15, 117, 64);
+  }
+  else{
+    fill(157, 174, 191);
+  }
+  //draws alternating pattern
+  rect(x*col,0,squSize, squSize);
+  //draws grey line
+  fill(157, 174, 191);
+  rect(x*col, 50, squSize,squSize);
+  //draws green line
+  fill(15, 117, 64);
+  rect(x*col, 100, squSize,squSize);
+  //draws grey line
+  fill(157, 174, 191);
+  rect(x*col, 150, squSize,squSize);
+}
 
-
-  strokeWeight(0);
-  fill (130,130,130);
+  strokeWeight(lineW);
   stroke(0,0,0);
 
   //blade
+  //colour based on rust level
+  if (rust == 0){
+    fill (130,130,130);
+  }
+  else if (rust >=1 && rust <3 ){
+    fill(133, 99, 73);
+  }
+  else{
+    fill(176, 88, 21);
+  }
+
+  //if the blade is longer than 50 its normal
+  //else it pierces the canvas
   if (bottomBlade - topBlade > 50){
   beginShape();
   vertex(55, bottomBlade);
+  
+  //if the blade is to rusty give it a notch
+  if (rust > 1){
+    vertex(55, topBlade + 10);
+    vertex(60, topBlade + 6);
+    vertex(55, topBlade + 2);
+  }
+
   vertex(55, topBlade);
   vertex(75, point);
   vertex(75,bottomBlade);
   endShape(CLOSE);
 
-  fill(94,94,94);
+  //colour based on rust level
+  if (rust == 0){
+    fill(94,94,94);
+  }
+  else if (rust >=1 && rust <3 ){
+    fill(99, 60, 31);
+  }
+  else{
+    fill(112, 50, 3);
+  }
+
   beginShape();
   vertex(75, point);
   vertex(95, topBlade);
@@ -52,7 +108,7 @@ let point = 10; //more than topblade
     rect(75,topBlade, 20, bottomBlade-topBlade);
     strokeWeight(1);
     line(50,topBlade, 100,topBlade);
-    strokeWeight(0);
+    strokeWeight(lineW);
   }
   
   //crossguard
@@ -117,7 +173,7 @@ let point = 10; //more than topblade
       rect(225,topBladeB, 20, bottomBladeB-topBladeB);
       strokeWeight(1);
       line(195,topBladeB, 255,topBladeB);
-      strokeWeight(0);
+      strokeWeight(lineW);
     }
   
     //crossguard
@@ -149,6 +205,7 @@ let point = 10; //more than topblade
 
 
     //shine
+    if (rust < 1){
   fill(256,256,256);
   beginShape();
   vertex (40,75); //(?,?)
@@ -164,4 +221,5 @@ let point = 10; //more than topblade
   vertex(65,90); //(+10,+10)
   vertex(60,95); //(-10,+10)
   endShape(CLOSE);
+   }
 }
