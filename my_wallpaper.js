@@ -1,9 +1,9 @@
 //your parameter variables go here!
-let topBlade = 30; //for sword 1
-let topBladeB = 40; //for sword 2
-let pomelSize = 12;
-let bottomBlade = 115;
-let bottomBladeB = 115;
+let topBlade = 40; //for sword 1
+let topBladeB = 30; //for sword 2
+let pomelSize = 15;
+let bottomBlade = 130;
+let bottomBladeB = 130;
 let x = 50;
 let squSize = 50;
 let lineW = 0;
@@ -11,7 +11,7 @@ let rust = 0;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -102,13 +102,47 @@ for (let col=1; col<=6; col++){
   vertex(75,bottomBlade);
   endShape(CLOSE);
   }
-  else{
+  else if (bottomBlade - topBlade <= 50 && rust < 2){
     rect(55,topBlade, 40, bottomBlade-topBlade);
-    fill(94,94,94);
+    if (rust == 0){
+      fill(94,94,94);
+    }
+    else {
+      fill(99, 60, 31);
+    }
     rect(75,topBlade, 20, bottomBlade-topBlade);
     strokeWeight(1);
     line(50,topBlade, 100,topBlade);
     strokeWeight(lineW);
+  }
+  else if (bottomBlade - topBlade <= 50 && rust >= 2) {
+    beginShape();
+    vertex (55, bottomBlade);
+    vertex (55, topBlade+5);
+    vertex (60, topBlade);
+    vertex (62, topBlade+3);
+    vertex (67, topBlade);
+    vertex (71, topBlade+5);
+    vertex (75, topBlade+2);
+    vertex (75, bottomBlade);
+    endShape(CLOSE);
+
+    if (rust >=1 && rust <3 ){
+      fill(99, 60, 31);
+    }
+    else{
+      fill(112, 50, 3);
+    }
+
+    beginShape();
+    vertex(75, topBlade+2);
+    vertex(80, topBlade+2);
+    vertex(86, topBlade);
+    vertex(90, topBlade+3);
+    vertex(95, topBlade);
+    vertex(95, bottomBlade);
+    vertex(75, bottomBlade);
+    endShape(CLOSE);
   }
   
   //crossguard
